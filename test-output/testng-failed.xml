@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.TestScenarios.FB_Login">
+      <class name="com.TestScenarios.ShearCircle">
         <methods>
-          <include name="beforeClass"/>
+          <include name="afterClass"/>
           <include name="afterMethod"/>
           <include name="login"/>
-          <include name="afterClass"/>
+          <include name="beforeClass"/>
         </methods>
-      </class> <!-- com.TestScenarios.FB_Login -->
+      </class> <!-- com.TestScenarios.ShearCircle -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
