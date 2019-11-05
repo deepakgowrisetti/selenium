@@ -23,5 +23,24 @@ public class Locaters {
 	public static final By contact_message = By.id("ContactForm-message");
 	
 	//*[@id="MainContent"]/div[2]/div/div/div[2]/p[1]/text()[1]
+	
+	
 
+	public static final By first_Name = By.id("firstname");
+	public static final By last_Name = By.id("lastname");
+	public static final By email_1 = By.id("uname");
+	public static final By mobile = By.id("mobile");
+	public static final By pwd = By.id("password");
+	public static final By cnf_Pwd = By.id("cnf_password");
+	public static final By submit = By.xpath("(//*[@type='submit'])[1]");
+	
+	//Frame URL
+	public static final By zonal_Link = By.name("P-24Alist");
+	public static final By lastUpdate = By.xpath("/html/body/table/tbody/tr[8]/td[2]/span");
+	
+	
+	
+	
+	
+	
 }

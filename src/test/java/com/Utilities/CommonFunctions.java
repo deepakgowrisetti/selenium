@@ -41,7 +41,7 @@ public class CommonFunctions extends StaticVaraibles {
 
 	// Chrome browser launch
 	public void chromeBrowserLaunch() {
-		System.setProperty("webdriver.chrome.driver", ".\\browserDrivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", ".\\browserDrivers\\chromedriver_78\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 
@@ -65,9 +65,14 @@ public class CommonFunctions extends StaticVaraibles {
 
 	// Java script click
 	public void clickByJSE(final By locater) {
-		WebElement ele = driver.findElement(locater);
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("arguments[0].click();", ele);
+		try {
+			WebElement ele = driver.findElement(locater);
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("arguments[0].click();", ele);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	// WebDriver driver;
@@ -113,7 +118,7 @@ public class CommonFunctions extends StaticVaraibles {
 
 	}
 
-	public void takescreenhot(String nameoftheScreenshot) throws IOException {
+	public void takescreenshot(String nameoftheScreenshot) throws IOException {
 		// take screenshots
 		Date d = new Date();
 		System.out.println(d);// Thu Sep 12 22:33:39 EDT 2019
@@ -154,6 +159,45 @@ public class CommonFunctions extends StaticVaraibles {
 		}
 		Thread.sleep(3000);
 
+	}
+
+	/******** Frames handle ***********/
+	public void switchToFrameByInt(int i) {
+		driver.switchTo().defaultContent();
+		driver.switchTo().frame(i);
+	}
+
+	public int IframeCount() {
+		driver.switchTo().defaultContent();
+		JavascriptExecutor exe = (JavascriptExecutor) driver;
+		Integer numberOfFrames = Integer.parseInt(exe.executeScript("return window.length").toString());
+		System.out.println("Number of iframes on the page are: " + numberOfFrames);
+
+		return numberOfFrames;
+	}
+
+	public int loopAllframesAndReturnCountofElement(final By locator) {
+		// WebElement found = fluentWait(By.xpath(xPathElement));
+		int ElementpresenceCount = 0;
+		int Loop = 0;
+		int maxFramaecount = IframeCount();
+
+		while (ElementpresenceCount < 1) {
+			try {
+				Thread.sleep(250);
+				switchToFrameByInt(Loop);
+				ElementpresenceCount = driver.findElements(locator).size();
+				System.out.println("Try LoopAllframesAndReturnWebEL Old: " + Loop + "; ElementpresenceCount: "
+						+ ElementpresenceCount);
+				Loop++;
+				if (ElementpresenceCount > 0 || Loop > maxFramaecount) {
+					break;
+				}
+			} catch (Exception ex) {
+				System.out.println("Catch LoopAllframesAndReturnWebEL Old: " + Loop + "; " + ex);
+			}
+		}
+		return ElementpresenceCount;
 	}
 
 }

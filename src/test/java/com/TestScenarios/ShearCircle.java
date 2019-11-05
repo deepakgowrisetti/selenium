@@ -1,7 +1,5 @@
 package com.TestScenarios;
 
-import org.testng.annotations.Test;
-
 import com.Objectrepository.Locaters;
 import com.Utilities.CommonFunctions;
 import com.Utilities.StaticVaraibles;
@@ -10,6 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -47,33 +46,59 @@ public class ShearCircle extends StaticVaraibles {
 
 		Properties p = new Properties();
 		p.load(fi);
+		
 		driver.get(p.getProperty("URL"));
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		
 		driver.findElement(By.xpath("//*[@class = 'btn btn-sm btn-info']")).click();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.findElement(By.xpath("(//*[contains(@class, 'btn-primary')])[3]")).click();
+		//driver.findElement(By.xpath("(//*[contains(@class, 'btn-primary')])[3]")).click();
+		cfn.clickByJSE(By.xpath("(//*[contains(@class, 'btn-primary')])[3]"));
 		//Thread.sleep(2000);
 		//click on the submit button without entering values
-		driver.findElement(By.xpath("(//*[@type='submit'])[1]")).click();
+		//driver.findElement(By.xpath("(//*[@type='submit'])[1]")).click();
+		cfn.clickByJSE(By.xpath("(//*[@type='submit'])[1]"));
+		cfn.takescreenshot("Invalid Sec Screenshot");
+		driver.navigate().refresh();
 		
-		 String a = driver.findElement(By.xpath("((//*[@class ='invalid'])[1])")).getText();
-		 //System.out.println(a);
+		 //String firstname_Validation = driver.findElement(By.xpath("((//*[@class ='invalid'])[1])")).getText();
+		 //System.out.println("firstname_Validation: " +firstname_Validation);
 		 //driver.navigate().refresh();
+		 cfn.sendKeysByanyLocater(obj.first_Name,p.getProperty("first_Name"));
+       // driver.findElement(By.id("firstname")).sendKeys("Deepak");
+		 cfn.sendKeysByanyLocater(obj.last_Name,p.getProperty("last_Name"));
+		 //driver.findElement(By.id("lastname")).sendKeys("Gowrisetti");
 		 
-        driver.findElement(By.id("firstname")).sendKeys("Deepak");
-        driver.findElement(By.id("lastname")).sendKeys("Gowrisetti");
-        driver.findElement(By.id("uname")).sendKeys("dgowrisetti@gmail.com");
-        driver.findElement(By.id("mobile")).sendKeys("9083100351");
-        driver.findElement(By.id("password")).sendKeys("45641654");
-        driver.findElement(By.id("cnf_password")).sendKeys("45664666");
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("(//*[@type='submit'])[1]")).click();
+        //driver.findElement(By.id("uname")).sendKeys("dgowrisetti@gmail.com");
+        cfn.sendKeysByanyLocater(obj.email_1,p.getProperty("email_1"));
         
+        //driver.findElement(By.id("mobile")).sendKeys("9083100351");
+        cfn.sendKeysByanyLocater(obj.mobile, p.getProperty("mobile"));
+        
+        //driver.findElement(By.id("password")).sendKeys("45641654");
+        cfn.sendKeysByanyLocater(obj.pwd, p.getProperty("pwd"));
+        
+        //driver.findElement(By.id("cnf_password")).sendKeys("45664666");
+        cfn.sendKeysByanyLocater(obj.cnf_Pwd,p.getProperty("cnf_password"));
+        Thread.sleep(2000);
+       // driver.findElement(By.xpath("(//*[@type='submit'])[1]")).click();
+        cfn.clickByanyLocater(obj.submit);
         //Thread.sleep(2000);
         System.out.println("Success");
          String b = driver.findElement(By.xpath("((//*[@class ='invalid'])[1])")).getText();
         System.out.println(b);
 		
 
+     /*   String expectedResult = "Deepak G";
+        String actualResults = driver.findElement(By.xpath("Sdfsdf")).getText();
+        
+        //validate the firstname text
+        if (expectedResult.equals(actualResults)) {
+			System.out.println("Both the string are equal");
+		} else {
+			System.out.println("Both the string are NOT equal");
+		}*/
 	}
 
 	@AfterMethod // 3

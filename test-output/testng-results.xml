@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="22316" started-at="2019-10-11T23:55:38 EDT" finished-at="2019-10-11T23:56:00 EDT">
+  <suite name="Default suite" duration-ms="19183" started-at="2019-11-04T20:25:23 EST" finished-at="2019-11-04T20:25:42 EST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="22316" started-at="2019-10-11T23:55:38 EDT" finished-at="2019-10-11T23:56:00 EDT">
-      <class name="com.TestScenarios.ShearCircle">
-        <test-method status="PASS" signature="beforeClass(java.lang.String)[pri:0, instance:com.TestScenarios.ShearCircle@67205a84]" name="beforeClass" is-config="true" duration-ms="4284" started-at="2019-10-11T23:55:38 EDT" finished-at="2019-10-11T23:55:42 EDT">
+    <test name="Default test" duration-ms="19183" started-at="2019-11-04T20:25:23 EST" finished-at="2019-11-04T20:25:42 EST">
+      <class name="com.TestScenarios.FrameSample">
+        <test-method status="PASS" signature="beforeClass(java.lang.String)[pri:0, instance:com.TestScenarios.FrameSample@67205a84]" name="beforeClass" is-config="true" duration-ms="5611" started-at="2019-11-04T20:25:23 EST" finished-at="2019-11-04T20:25:28 EST">
           <params>
             <param index="0">
               <value>
@@ -18,90 +18,26 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="FAIL" signature="login()[pri:0, instance:com.TestScenarios.ShearCircle@67205a84]" name="login" duration-ms="13663" started-at="2019-10-11T23:55:42 EDT" finished-at="2019-10-11T23:55:56 EDT">
-          <exception class="org.openqa.selenium.StaleElementReferenceException">
-            <message>
-              <![CDATA[stale element reference: element is not attached to the page document
-  (Session info: chrome=77.0.3865.90)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'AARAV', ip: '192.168.1.64', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: C:\Users\Deepak\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:58137}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 6e867cb9e07c7cd3bb4db0aaabc02f05]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=77.0.3865.90)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'AARAV', ip: '192.168.1.64', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: C:\Users\Deepak\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:58137}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 6e867cb9e07c7cd3bb4db0aaabc02f05
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-at com.TestScenarios.ShearCircle.login(ShearCircle.java:56)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(Unknown Source)
-at org.testng.TestRunner.privateRun(TestRunner.java:770)
-at org.testng.TestRunner.run(TestRunner.java:591)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-at org.testng.TestNG.runSuites(TestNG.java:1032)
-at org.testng.TestNG.run(TestNG.java:1000)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+        <test-method status="PASS" signature="login()[pri:0, instance:com.TestScenarios.FrameSample@67205a84]" name="login" duration-ms="9066" started-at="2019-11-04T20:25:28 EST" finished-at="2019-11-04T20:25:37 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.TestScenarios.ShearCircle@67205a84]" name="afterMethod" is-config="true" duration-ms="3611" started-at="2019-10-11T23:55:56 EDT" finished-at="2019-10-11T23:56:00 EDT">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.TestScenarios.FrameSample@67205a84]" name="afterMethod" is-config="true" duration-ms="3591" started-at="2019-11-04T20:25:37 EST" finished-at="2019-11-04T20:25:41 EST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=login status=FAILURE method=ShearCircle.login()[pri:0, instance:com.TestScenarios.ShearCircle@67205a84] output={null}]]]>
+                <![CDATA[[TestResult name=login status=SUCCESS method=FrameSample.login()[pri:0, instance:com.TestScenarios.FrameSample@67205a84] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.TestScenarios.ShearCircle@67205a84]" name="afterClass" is-config="true" duration-ms="703" started-at="2019-10-11T23:56:00 EDT" finished-at="2019-10-11T23:56:00 EDT">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.TestScenarios.FrameSample@67205a84]" name="afterClass" is-config="true" duration-ms="787" started-at="2019-11-04T20:25:41 EST" finished-at="2019-11-04T20:25:42 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- com.TestScenarios.ShearCircle -->
+      </class> <!-- com.TestScenarios.FrameSample -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
