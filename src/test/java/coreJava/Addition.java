@@ -12,6 +12,7 @@ public class Addition {
 	}
 
 	public static void main(String[] args) {
+		add(12,6615);
 		add(12,665);
 		System.out.println("hi");
 		add(987,54);
